@@ -90,7 +90,7 @@ Run `update_all.sh` to reinstall the required files onto your SD card.
 The script checks for `/media/fat/games` on a single SD card and will fail if `games` is read from an external device, or mounted to a different directory.  Create a `Scripts/ntm-randomizer.ini` via the template file and updated `TURFMAST_ZIP` to match your storage configuration.
 
 ### Modified [turfmast.zip] found
-The (turfmastrand)[https://github.com/StiNKzz/turfmastrand] tool requires an unmodified `200-p1.p1` ROM.  Verify your `turfmast.zip` is an unmodified, merged ROM set.
+The [turfmastrand](https://github.com/StiNKzz/turfmastrand) tool requires an unmodified `200-p1.p1` ROM.  Verify your `turfmast.zip` is an unmodified, merged ROM set.
 
 ## Refs
 - https://github.com/StiNKzz/turfmastrand
