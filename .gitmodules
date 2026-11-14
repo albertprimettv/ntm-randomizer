@@ -1,0 +1,6 @@
+[submodule "lithogen"]
+	path = lithogen
+	url = https://github.com/carmiker/lithogen
+[submodule "turfmastrand"]
+	path = turfmastrand
+	url = https://github.com/StiNKzz/turfmastrand/
