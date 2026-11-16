@@ -34,7 +34,7 @@ done
 if [ ! -d "${OUTPUT_DIR}" ]; then
   echo "[${OUTPUT_DIR}] does not exist"
   echo "Create this directory or update TOOLS_DIR in ntm-randomizer.ini and try again."
-  exit 1*
+  exit 1
 fi
 
 echo
