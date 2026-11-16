@@ -1,11 +1,19 @@
 #!/bin/bash
 
-required_vars=("TOOLS_DIR" "OUTPUT_DIR" "TURFMAST_DIR")
+# Version History
+# ===============
+# 2026-11-15
+# - Move default `turfmast.zip` location to `/media/fat/ntm-randomizer`
+#
+# 2026-11-14
+# - Initial release
+
+required_vars=("TOOLS_DIR" "OUTPUT_DIR")
 
 # Set defaults for tools dir and output paths (if SAVE_NEO=1)
 TOOLS_DIR="/media/fat/ntm-randomizer"
 OUTPUT_DIR="/media/fat/games/NEOGEO"
-TURFMAST_DIR="/media/fat/games/NEOGEO"
+TURFMAST_DIR="/media/fat/ntm-randomizer"
 
 TMP=/tmp/ntm-randomizer
 TMP_ZIP=${TMP}/turfmastrand.zip
@@ -26,7 +34,7 @@ done
 if [ ! -d "${OUTPUT_DIR}" ]; then
   echo "[${OUTPUT_DIR}] does not exist"
   echo "Create this directory or update TOOLS_DIR in ntm-randomizer.ini and try again."
-  exit 1
+  exit 1*
 fi
 
 echo

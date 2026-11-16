@@ -14,9 +14,7 @@ db_url = https://raw.githubusercontent.com/albertprimettv/ntm-randomizer/db/db.j
 This will install all required binaries to `/media/fat/ntm-randomizer`, [ntm-randomizer.sh](Scripts/ntm-randomizer.sh), and [ntm-randomizer.ini.template](Scripts/ntm-randomizer.ini.template) into `Scripts` directory of your SD card.
 
 ### turfmast.zip
-Place a merged copy of the MAME `turfmast.zip` ROM in `/media/fat/games/NEOGEO`.
-
-NOTE: If you are using external storage or networking mounting to a different location, create `Scripts/ntm-randomizer.ini` and set `TURFMAST_DIR` appropriately.
+Place a merged copy of the MAME `turfmast.zip` ROM in `/media/fat/ntm-randomizer`.
 
 ## How it works
 Upon running [ntm-randomizer.sh](Scripts/ntm-randomizer.sh):
@@ -27,7 +25,7 @@ Upon running [ntm-randomizer.sh](Scripts/ntm-randomizer.sh):
 The default behavior is to only write data to `/tmp` to minimize SD card write cycles.  Saving generated .neo files is disabled by default and must be manually enabled via `SAVE_NEO=1` in the .ini file.
 
 ## Customizing via the .ini file
-A `Scripts/ntm-randomizer.ini` can be created using the installed [`Scripts/ntm-randomizer.ini.template`]([ntm-randomizer.ini.template]) to override the tool and output install path if you use external storage, enable saving all randomized courses, or generate random pin locations.  Default values are used if `Scripts/ntm-randomizer.ini` does not exist.
+A `Scripts/ntm-randomizer.ini` can be created using the installed [`Scripts/ntm-randomizer.ini.template`]([ntm-randomizer.ini.template]) to override various settings.  Default values are used if `Scripts/ntm-randomizer.ini` does not exist.
 
 ```ini
 # ntm-randomizer.ini
@@ -38,9 +36,9 @@ A `Scripts/ntm-randomizer.ini` can be created using the installed [`Scripts/ntm-
 TOOLS_DIR="/media/fat/ntm-randomizer"
 
 # REQUIRED
-# Directory to turfmast.zip; may need to be changed if using external storage or networking mounting script
-# Default: TURFMAST_ZIP="/media/fat/games/NEOGEO"
-TURFMAST_DIR="/media/fat/games/NEOGEO"
+# Directory to turfmast.zip; can be changed if ROM already exists elsewhere on your SD card
+# Default: TURFMAST_DIR="/media/fat/ntm-randomizer"
+TURFMAST_DIR="/media/fat/ntm-randomizer"
 
 # OPTIONAL
 # SAVE_NEO=0 to keep the file in /tmp/, will lose the file on reboot
@@ -86,12 +84,19 @@ Run `update_all.sh` to reinstall the required files onto your SD card.
 ### [lithogen/turfmastrand] does not exist
 Run `update_all.sh` to reinstall the required files onto your SD card.
 
-### [turfmast.zip] not found
-The script checks for `/media/fat/games` on a single SD card and will fail if `games` is read from an external device, or mounted to a different directory.  Create a `Scripts/ntm-randomizer.ini` via the template file and updated `TURFMAST_ZIP` to match your storage configuration.
+### [turfmast.zip] does not exist
+Place a merged copy of the MAME `turfmast.zip` ROM in `/media/fat/ntm-randomizer`.
 
 ### Modified [turfmast.zip] found
-The [turfmastrand](https://github.com/StiNKzz/turfmastrand) tool requires an unmodified `200-p1.p1` ROM.  Verify your `turfmast.zip` is an unmodified, merged ROM set.
+The [turfmastrand](https://github.com/StiNKzz/turfmastrand) tool requires an unmodified `200-p1.p1` ROM.  Verify your `turfmast.zip` is an unmodified, merged MAME ROM set.
 
-## Refs
-- https://github.com/StiNKzz/turfmastrand
-- https://github.com/carmiker/lithogen
+## Version History
+### 2026-11-15
+- Move default `turfmast.zip` location to `ntm-randomizer`
+
+### 2026-11-14
+- Initial release
+
+## Acknowledgments
+* [turfmastrand](https://github.com/StiNKzz/turfmastrand): Hole order and random pin location generator.
+* [lithogen](https://github.com/carmiker/lithogen): Pack MAME zip into NeoSD-compatible .neo ROM.

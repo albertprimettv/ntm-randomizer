@@ -6,9 +6,9 @@
 TOOLS_DIR="/media/fat/ntm-randomizer"
 
 # REQUIRED
-# Directory to turfmast.zip; may need to be changed if using external storage or networking mounting script
-# Default: TURFMAST_DIR="/media/fat/games/NEOGEO"
-TURFMAST_DIR="/media/fat/games/NEOGEO"
+# Directory to turfmast.zip; can be changed if ROM already exists elsewhere on your SD card
+# Default: TURFMAST_DIR="/media/fat/ntm-randomizer"
+TURFMAST_DIR="/media/fat/ntm-randomizer"
 
 # OPTIONAL
 # SAVE_NEO=0 to keep the file in /tmp/, will lose the file on reboot
