@@ -1,0 +1,43 @@
+# ntm-randomizer.ini
+
+# REQUIRED
+# Full path to lithogen, turfmastrand
+# Default: TOOLS_DIR="/media/fat/ntm-randomizer"
+TOOLS_DIR="/media/fat/ntm-randomizer"
+
+# REQUIRED
+# Directory to turfmast.zip; can be changed if ROM already exists elsewhere on your SD card
+# Default: TURFMAST_DIR="/media/fat/ntm-randomizer"
+TURFMAST_DIR="/media/fat/ntm-randomizer"
+
+# OPTIONAL
+# SAVE_NEO=0 to keep the file in /tmp/, will lose the file on reboot
+# SAVE_NEO=1 to save the file to OUTPUT_DIR
+SAVE_NEO=0
+
+# REQUIRED if SAVE_NEO=1
+# Output directory for the generated .neo file if SAVE_NEO=1
+# Default: OUTPUT_DIR="/media/fat/games/NEOGEO"
+OUTPUT_DIR="/media/fat/games/NEOGEO"
+
+# OPTIONAL
+# Keep one or all randomized files.
+# Ignored if SAVE_NEO=0
+# OVERWRITE_NEO=0 to keep all randomized .neo files; timestamp will be appended to .neo file
+# OVERWRITE_NEO=1 to keep only 1 .neo file
+# Default: OVERWRITE_NEO=0
+OVERWRITE_NEO=0
+
+# OPTIONAL
+# Launch the game automatically after running the script
+# AUTOLAUNCH=0 to skip launching the game
+# AUTOLAUNCH=1 to automatically launch the game
+# Default: AUTOLAUNCH=1
+AUTOLAUNCH=1
+
+# OPTIONAL
+# Generate random pin locations
+# RAND_PINS=0 to use default pin locations
+# RAND_PINS=1 to generate random pin locations
+# Default: RAND_PINS=0
+RAND_PINS=0
